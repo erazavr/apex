@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const users = require('./app/users');
-const common = require('./app/common')
+const common = require('./app/common');
 
 const config = require('./config');
 
@@ -17,7 +17,7 @@ app.use(express.static('public'));
 const run = async () => {
   await mongoose.connect(config.database, config.databaseOptions);
   app.use('/users', users);
-  app.use('/commons', common)
+  app.use('/commons', common);
 
   app.listen(config.port, () => {
     console.log(`HTTP Server started on ${config.port} port!`);
